@@ -31,7 +31,7 @@ COPY ./app/composer.* ./
 RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
 
 # run composer dump-autoload --optimize
-RUN composer dump-autoload --optimize
+RUN composer dump-autoload
 
 # Xdebug has different modes / functionalities. We can default to 'off' and set to 'debug'
 # when we run docker compose up if we need it
