@@ -21,30 +21,30 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  db:
-    image: mysql:8.0
-    ports:
-      - "3307:3306"
-    restart: unless-stopped
-    volumes:
-      - mysqldata:/var/lib/mysql      
-    environment:
-      MYSQL_HOST: ${MYSQL_HOST}
-      MYSQL_PORT: ${MYSQL_PORT}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  
+  # db:
+  #   image: mysql:8.0
+  #   ports:
+  #     - "3307:3306"
+  #   restart: unless-stopped
+  #   volumes:
+  #     - mysqldata:/var/lib/mysql      
+  #   environment:
+  #     MYSQL_HOST: ${MYSQL_HOST}
+  #     MYSQL_PORT: ${MYSQL_PORT}
+  #     MYSQL_DATABASE: ${MYSQL_DATABASE}
+  #     MYSQL_USER: ${MYSQL_USER}
+  #     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  #     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  
 
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin
-    restart: unless-stopped
-    ports:
-      - 8002:80
-    environment:
-      MYSQL_ROOT_PASSWORD: password
+  # phpmyadmin:
+  #   depends_on:
+  #     - db
+  #   image: phpmyadmin
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8002:80
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
     # redis
 
 volumes:

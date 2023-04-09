@@ -35,14 +35,14 @@ RUN composer dump-autoload
 
 # Xdebug has different modes / functionalities. We can default to 'off' and set to 'debug'
 # when we run docker compose up if we need it
-ENV XDEBUG_MODE=debug
+# ENV XDEBUG_MODE=debug
 
 # Copy xdebug config file into container
-COPY ./php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+# COPY ./php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install xdebug
-RUN set -eux; \
-	install-php-extensions xdebug
+# RUN set -eux; \
+# 	install-php-extensions xdebug
 
 # Start Apache in foreground
-CMD ["apache2-foreground"]
+# CMD ["apache2-foreground"]
